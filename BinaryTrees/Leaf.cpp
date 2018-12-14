@@ -1,13 +1,14 @@
 #include "pch.h"
 #include "Leaf.h"
+#include <stdlib.h>
 
 
 
 Leaf::Leaf(int n)
 {
 	this->Value = n;
-	this->Left = nullptr;
-	this->Right = nullptr;
+	Left = nullptr;
+	Right = nullptr;
 }
 
 int Leaf::GetValue()
@@ -25,8 +26,7 @@ void Leaf::InsertNode(int number)
 	{
 		if (this->Left == nullptr)
 		{
-			Leaf leaf(number);
-			this->Left = &leaf;
+			this->Left = new Leaf(number);
 		}
 		else
 		{
@@ -37,12 +37,11 @@ void Leaf::InsertNode(int number)
 	{
 		if (this->Right == nullptr)
 		{
-			Leaf leaf(number);
-			this->Right = &leaf;
+			this->Right = new Leaf(number);
 		}
 		else
 		{
-			this->Left->InsertNode(number);
+			this->Right->InsertNode(number);
 		}
 	}
 }

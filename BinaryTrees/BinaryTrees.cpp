@@ -3,11 +3,18 @@
 
 #include "pch.h"
 #include <iostream>
+#include "Leaf.h"
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
-	std::cout << "Hi";
+	Leaf root(3);
+	root.InsertNode(5);
+	root.InsertNode(1);
+	root.InsertNode(2);
+
+	std::cout << "End";
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
